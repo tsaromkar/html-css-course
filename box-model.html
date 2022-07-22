@@ -1,0 +1,94 @@
+<style>
+  button {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .pages {
+    color: purple;
+    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+  .stretch {
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: 22px;
+    transition: padding-left 0.20s, padding-right 0.20s,
+    padding-top 0.20s, padding-bottom 0.20s;
+  }
+  .stretch:hover {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .shadow {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.15);
+    transition: box-shadow 0.15s;
+  }
+  .shadow:active {
+    box-shadow: 0px 0px 0px rgba(0,0,0,0);
+  }
+  .mar-pad {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: padding-left 0.15s,
+    padding-right 0.15s,
+    margin-left 0.15s,
+    margin-right 0.15s;
+  }
+  .mar-pad:hover {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+</style>
+
+<p>Pagination</p>
+<button>Back</button>
+<a class="pages"><u>1</u></a>
+<a class="pages"><u>2</u></a>
+<a class="pages"><u>3</u></a>
+<a class="pages"><u>4</u></a>
+<a class="pages"><u>5</u></a>
+<button>Next</button>
+
+<p>Stretch</p>
+<button class="stretch">Stretch</button>
+
+<p>Shadow</p>
+<button class="shadow">Shadow</button>
+
+<p>Margin and padding together</p>
+<button class="mar-pad">one</button>
+<button class="mar-pad">two</button>
+<button class="mar-pad">three</button>
