@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      FlexBox
+    </title>
+    <style>
+      .flexbox {
+        display: flex;
+        gap: 10px;
+      }
+      .testimonial {
+        border-radius: 10px;
+        /* padding: 10px; */
+
+
+        /* 
+          flex-basis: auto / 0 is similar to
+          width: max-content / min-content
+        */
+
+        /* flex-wrap: wrap;   - wraps the flex items to next line */
+        /* justify-content: ''; for multiple items on main axis
+        align-items: '';  for items which are single on cross axis
+        align-self: ''; for individual items */
+      }
+      
+      .section-1 .testimonial {
+        /* it takes max-content width, if content is small leaves some space in flexbox */
+        flex-shrink: 1;
+        flex-basis: auto;
+      }
+      .section-2 .testimonial {
+        /* it takes max-content width, if content is large takes entire space in flexbox shrinking the content */
+        flex-shrink: 1;
+        flex-basis: auto;
+      }
+      .section-3 .testimonial {
+        /* does not shrink and expands to take the entire flexbox, if content is large than content overflows the screen width */
+        flex-shrink: 0;
+        flex-basis: auto;
+      }
+      .section-4 .testimonial {
+        /* setting flex-basis to 0 gives min-content width allowing shrinking whether or not flex-shrink is 0 or 1, flex-basis is similar to width */
+        flex-shrink: 0;
+        flex-basis: 0;
+      }
+      .section-5 .testimonial {
+        /* when flex: 1, flex-basis is set to 0 which gives min-content width to items and then flex-grow divides the remaining space and gives equal spaces to items */
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+      }
+
+      .section-6 .testimonial {
+        /* flex-basis is similar to width */
+        /* flex item takes entire screen width of 100% */
+        flex-shrink: 0;
+        flex-basis: 100%;
+      }
+
+      .section-7 .testimonial {
+        /* similar to flex: 1 */
+        flex-shrink: 1;
+        flex-basis: 100%;
+      }
+ 
+
+    </style>
+      </head>
+    <body>
+      <main>
+        section-1
+        <br>
+        <br>
+        <section class="flexbox">
+          <article class="testimonial" style="background-color: lightblue">
+            “Hello World!”
+          </article>
+          <article class="testimonial" style="background-color: lightcoral">
+            "Hello"
+          </article>
+          <article class="testimonial" style="background-color: lightseagreen">
+            “World!”
+          </article>
+        </section>
+
+        <br>
+        <br>
+        
+        section-2
+        <br>
+        <br>
+        <section class="flexbox section-2">
+          <article class="testimonial" style="background-color: lightblue">
+            “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a transition and have heard some people who had an amazing experience here. I signed up for the free intro course and found it incredibly fun! I enrolled shortly thereafter. The next 12 weeks was the best - and most grueling - time of my life. Since completing the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup. ”
+          </article>
+          <article class="testimonial" style="background-color: lightcoral">
+            “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer for a big company. This was one of the best investments I’ve made in myself. ”
+          </article>
+          <article class="testimonial" style="background-color: lightseagreen">
+            “ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living while doing something I love. ”
+          </article>
+        </section>
+
+        <br>
+        <br>
+        
+        section-3
+        <br>
+        <br>
+        <section class="flexbox section-3">
+          <article class="testimonial" style="background-color: lightblue">
+            “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a transition and have heard some people who had an amazing experience here. I signed up for the free intro course and found it incredibly fun! I enrolled shortly thereafter. The next 12 weeks was the best - and most grueling - time of my life. Since completing the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup. ”
+          </article>
+          <article class="testimonial" style="background-color: lightcoral">
+            “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer for a big company. This was one of the best investments I’ve made in myself. ”
+          </article>
+          <article class="testimonial" style="background-color: lightseagreen">
+            “ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living while doing something I love. ”
+          </article>
+        </section>
+
+        <br>
+        <br>
+        
+        section-4
+        <br>
+        <br>
+        <section class="flexbox section-4">
+          <article class="testimonial" style="background-color: lightblue">
+            “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a transition and have heard some people who had an amazing experience here. I signed up for the free intro course and found it incredibly fun! I enrolled shortly thereafter. The next 12 weeks was the best - and most grueling - time of my life. Since completing the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup. ”
+          </article>
+          <article class="testimonial" style="background-color: lightcoral">
+            “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer for a big company. This was one of the best investments I’ve made in myself. ”
+          </article>
+          <article class="testimonial" style="background-color: lightseagreen">
+            “ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living while doing something I love. ”
+          </article>
+        </section>
+
+        <br>
+        <br>
+        
+        section-5
+        <br>
+        <br>
+        <section class="flexbox section-5">
+          <article class="testimonial" style="background-color: lightblue">
+            “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a transition and have heard some people who had an amazing experience here. I signed up for the free intro course and found it incredibly fun! I enrolled shortly thereafter. The next 12 weeks was the best - and most grueling - time of my life. Since completing the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup. ”
+          </article>
+          <article class="testimonial" style="background-color: lightcoral">
+            “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer for a big company. This was one of the best investments I’ve made in myself. ”
+          </article>
+          <article class="testimonial" style="background-color: lightseagreen">
+            “ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living while doing something I love. ”
+          </article>
+        </section>
+
+        <br>
+        <br>
+        
+        section-6
+        <br>
+        <br>
+        <section class="flexbox section-6">
+          <article class="testimonial" style="background-color: lightblue">
+            “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a transition and have heard some people who had an amazing experience here. I signed up for the free intro course and found it incredibly fun! I enrolled shortly thereafter. The next 12 weeks was the best - and most grueling - time of my life. Since completing the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup. ”
+          </article>
+          <article class="testimonial" style="background-color: lightcoral">
+            “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer for a big company. This was one of the best investments I’ve made in myself. ”
+          </article>
+          <article class="testimonial" style="background-color: lightseagreen">
+            “ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living while doing something I love. ”
+          </article>
+        </section>
+
+        <br>
+        <br>
+        
+        section-7
+        <br>
+        <br>
+        <section class="flexbox section-7">
+          <article class="testimonial" style="background-color: lightblue; padding: 50px">
+            “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a transition and have heard some people who had an amazing experience here. I signed up for the free intro course and found it incredibly fun! I enrolled shortly thereafter. The next 12 weeks was the best - and most grueling - time of my life. Since completing the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup. ”
+          </article>
+          <article class="testimonial" style="background-color: lightcoral">
+            “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer for a big company. This was one of the best investments I’ve made in myself. ”
+          </article>
+          <article class="testimonial" style="background-color: lightseagreen">
+            “ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living while doing something I love. ”
+          </article>
+        </section>
+      </main>
+    </body>
+</html>
