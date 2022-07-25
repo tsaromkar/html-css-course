@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grid Practice</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      .box {
+        height: 100px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      .box div {
+        border-radius: 4px;
+        padding: 20px;
+      }
+      .header {
+        background-color: lightblue;
+      }
+      .navigation {
+        background-color: lightseagreen;
+      }
+      .main {
+        background-color: lightyellow;
+      }
+      .sidebar {
+        background-color: lightcoral;
+      }
+      .ads {
+        background-color: lightsalmon;
+      }
+      .footer {
+        background-color: lightpink;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="box">
+      <div class="header">
+        header
+      </div>
+      <div class="navigation">
+        navigation
+      </div>
+      <div class="main">
+        main
+      </div>
+      <div class="sidebar">
+        sidebar
+      </div>
+      <div class="ads">
+        ads
+      </div>
+      <div class="footer">
+        footer
+      </div>
+    </div>
+
+  </body>
+</html>

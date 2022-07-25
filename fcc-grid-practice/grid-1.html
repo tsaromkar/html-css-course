@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grid Practice</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      .box {
+        height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+      .box div {
+        border-radius: 4px;
+        padding: 20px;
+      }
+      .header {
+        background-color: lightblue;
+      }
+      .main {
+        background-color: lightseagreen;
+      }
+      .footer {
+        background-color: lightpink;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="box">
+      <div class="header">
+        header
+      </div>
+      <div class="main">
+        main
+      </div>
+      <div class="footer">
+        footer
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grid Practice</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      .box {
+        height: 100%;
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: repeat(12, 1fr);
+        align-items: center;
+      }
+      .box div {
+        border-radius: 4px;
+        padding: 20px;
+        height: 500px;
+      }
+      .section1 {
+        background-color: lightblue;
+        grid-column: 2 /span 4;
+      }
+      .section2 {
+        background-color: lightseagreen;
+        grid-column: 6 /span 6;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="box">
+      <div class="section1">
+        section1
+      </div>
+      <div class="section2">
+        section2
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grid Practice</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      .box {
+        height: 100%;
+        display: grid;
+        gap: 20px;
+        grid-template-rows: auto auto 1fr auto auto auto;
+        grid-template-areas: 
+        'header'
+        'nav'
+        'main'
+        'sidebar'
+        'ads'
+        'footer';
+      }
+      .box div {
+        border-radius: 4px;
+        padding: 20px;
+      }
+      .header {
+        background-color: lightblue;
+        grid-area: header;
+      }
+      .navigation {
+        background-color: lightseagreen;
+        grid-area: nav;
+      }
+      .main {
+        background-color: lightyellow;
+        grid-area: main;
+      }
+      .sidebar {
+        background-color: lightcoral;
+        grid-area: sidebar;
+      }
+      .ads {
+        background-color: lightsalmon;
+        grid-area: ads;
+      }
+      .footer {
+        background-color: lightpink;
+        grid-area: footer;
+      }
+      @media (min-width: 720px) {
+        .box {
+          grid-template-rows: auto auto 1fr auto;
+          grid-template-areas: 
+          'header header header'
+          'nav nav nav'
+          'sidebar main main'
+          'ads footer footer';
+        }
+      }
+      @media (min-width: 1020px) {
+        .box {
+          grid-template-rows: auto auto 1fr auto;
+          grid-template-areas: 
+          'header header header header header'
+          'sidebar nav nav nav ads'
+          'sidebar main main main ads'
+          'footer footer footer footer footer';
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="box">
+      <div class="header">
+        header
+      </div>
+      <div class="navigation">
+        navigation
+      </div>
+      <div class="main">
+        main
+      </div>
+      <div class="sidebar">
+        sidebar
+      </div>
+      <div class="ads">
+        ads
+      </div>
+      <div class="footer">
+        footer
+      </div>
+    </div>
+
+  </body>
+</html>
