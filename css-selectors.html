@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Css Selector</title>
+    <style>
+
+      /* two elements with same class one can be referred by element.class */
+      .center {
+        color: blue;
+      }
+
+      p.center {
+        font-size: 30px;
+      }
+
+      /* same elements with same classes, one of them can have diff class for styling */
+      .bold {
+        font-weight: 700;
+        color: red;
+      }
+
+      /* universal selector */
+      /* * {
+        color: red;
+      } */
+
+      /* grouping element selectors */
+      /* h1, p {
+        color: red;
+      } */
+
+      .lightseagreen {
+        color: lightseagreen;
+      }
+
+      /* all descendents */
+      /* div p {
+        color: lightcoral;
+      } */
+
+      /* direct children */
+      /* div > p {
+        color: lightgreen;
+      } */
+
+      /* directly next adjacent sibling */
+      /* div + p {
+        color: lightblue;
+      } */
+
+      /* all next siblings */
+      div ~ p {
+        color: lightsalmon;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <h1 class="center">This is header</h1>
+    <p class="center">This is paragraph</p>
+    <p class="center bold">This is paragraph</p>
+
+
+    <div>
+      Div Element
+      <p class=""> - This is paragraph</p>
+      <p class=""> - This is paragraph</p>
+      <section>
+        <p class=""> -- This is paragraph</p>
+        <p class=""> -- This is paragraph</p>
+      </section>
+    </div>
+
+    <p class="">This is paragraph</p>
+    <p class="">This is paragraph</p>
+
+    <div>
+      Div Element
+      <section>
+        <p class=""> - This is paragraph</p>
+        <p class=""> - This is paragraph</p>
+      </section>
+    </div>
+
+    <p class="">This is paragraph</p>
+
+  </body>
+</html>
