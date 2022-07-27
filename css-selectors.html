@@ -3,87 +3,224 @@
   <head>
     <title>Css Selector</title>
     <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      /* universal selector with box sizing */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .grid-container {
+        height: 100%;
+        display: grid;
+        grid-template-rows: auto auto 1fr auto; 
+        gap: 1rem;
+      }
+      /* universal selector with all first level children and an excecption pseudo-class i.e :not */
+      .grid-container > *:not(main) {
+        border: 1px solid lightcoral;
+        padding: 1rem;
+      }
+      main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 50% 50%;
+        gap: 1rem;
+      }
+      main > * {
+        padding: 1rem;
+        border: 1px solid lightcoral;
+      }
+      .grid-col-span-2 {
+        grid-column: span 2;
+      }
+      .section2 {
+        grid-column: 3 / 4;
+        grid-row: 2;
+      }
+      aside {
+        grid-column: 4;
+        grid-row: 1/3;
+      }
 
-      /* two elements with same class one can be referred by element.class */
-      .center {
+      /* combinators */
+      .combinators p {
+        color: coral;
+      }
+      .combinators > p {
+        background-color: aqua;
+      }
+      .combinators > div:first-of-type + p {
+        color: red;
+      }
+      .combinators > div:last-of-type ~ p {
         color: blue;
       }
 
-      p.center {
-        font-size: 30px;
+      /* pseudo-class selectors */
+      .pseudo-class > p:first-of-type::first-letter {
+        color: coral;
+        font-size: 1.5rem;
       }
 
-      /* same elements with same classes, one of them can have diff class for styling */
-      .bold {
-        font-weight: 700;
+      .pseudo-class > p:first-of-type::first-line {
+        color: blue;
+      }
+
+      .pseudo-class *::selection {
+        color: blue;
+        background-color: yellowgreen;
+      }
+
+      .pseudo-class > div:first-of-type::before {
+        content: "Hello first child";
         color: red;
       }
 
-      /* universal selector */
-      /* * {
+      .pseudo-class > p:last-child::after {
+        content: "Thank you!";
         color: red;
-      } */
-
-      /* grouping element selectors */
-      /* h1, p {
-        color: red;
-      } */
-
-      .lightseagreen {
-        color: lightseagreen;
       }
 
-      /* all descendents */
-      /* div p {
-        color: lightcoral;
-      } */
-
-      /* direct children */
-      /* div > p {
-        color: lightgreen;
-      } */
-
-      /* directly next adjacent sibling */
-      /* div + p {
-        color: lightblue;
-      } */
-
-      /* all next siblings */
-      div ~ p {
-        color: lightsalmon;
+      /* attribute selectors */
+      [title] {
+        color: green;
+      }
+      [class="abc"] {
+        color: red;
+      }
+      [class|="spain"] {
+        color: orange
+      }
+      [class~="india"] {
+        color: rgb(0, 64, 255)
+      }
+      [class^="usa"] {
+        color: rgb(255, 0, 234)
+      }
+      [class$="tokyo"] {
+        color: rgb(255, 213, 0)
+      }
+      [class*="or"] {
+        color: rgb(87, 147, 79)
       }
 
+      aside div {
+        /* width: 100px; */
+        /* height: 200px; */
+        border: 1px solid blue;
+      }
+      aside div p:first-child {
+        width: 20vw;
+        background-color: aqua;
+      }
+      aside div p:last-child {
+        height: 50vh;
+        background-color: coral;
+      }
     </style>
   </head>
   <body>
 
-    <h1 class="center">This is header</h1>
-    <p class="center">This is paragraph</p>
-    <p class="center bold">This is paragraph</p>
+    <div class="grid-container">
+      <header>
+        header
+      </header>
 
+      <nav>
+        nav
+      </nav>
 
-    <div>
-      Div Element
-      <p class=""> - This is paragraph</p>
-      <p class=""> - This is paragraph</p>
-      <section>
-        <p class=""> -- This is paragraph</p>
-        <p class=""> -- This is paragraph</p>
-      </section>
+      <main>
+        <section class="section1">
+          section
+        </section>
+
+        <article class="article1 grid-col-span-2">
+          <div class="combinators">
+            <p>This is 1st paragraph</p>
+            <p>This is 2nd paragraph</p>
+            <div>
+              <p> - This is 3rd paragraph</p>
+              <p> - This is 4th paragraph</p>
+              <div>
+                <p> -- This is 3rd paragraph</p>
+                <p> -- This is 4th paragraph</p>
+              </div>
+            </div>
+            <p>This is 5th paragraph</p>
+            <p>This is 6th paragraph</p>
+            <div>
+              <p> - This is 7th paragraph</p>
+              <p> - This is 8th paragraph</p>
+            </div>
+            <p>This is 9th paragraph</p>
+            <p>This is 10th paragraph</p>
+          </div>
+        </article>
+
+        <section class="section2">
+          <div class="attribute">
+            <p class="paris" title="france">This is france paragraph</p>
+            <p class="spain">This is spain paragraph</p>
+            <div>
+              <p class="spain-france"> - This is spain paragraph</p>
+              <p> - This is 4th paragraph</p>
+              <div>
+                <p class="india germany"> -- This is india paragraph</p>
+                <p class="india"> -- This is india paragraph</p>
+              </div>
+            </div>
+            <p class="usa-india">This is usa paragraph</p>
+            <p class="poland-tokyo">This poland 6th paragraph</p>
+            <div>
+              <p class="world"> - This is world paragraph</p>
+              <p> - This is 8th paragraph</p>
+            </div>
+            <p>This is 9th paragraph</p>
+            <p class="abc">This is abc paragraph</p>
+          </div>
+        </section>
+
+        <article class="article2 grid-col-span-2">
+          <div class="pseudo-class">
+            <p>This is 1st paragraph This is 1st paragraph This is 1st paragraph This is 1st paragraph This is 1st paragraph This is 1st paragraph This is 1st paragraph This is 1st paragraph This is 1st paragraph This is 1st paragraph</p>
+            <p>This is 2nd paragraph</p>
+            <div>
+              <p> - This is 3rd paragraph</p>
+              <p> - This is 4th paragraph</p>
+              <div>
+                <p> -- This is 3rd paragraph</p>
+                <p> -- This is 4th paragraph</p>
+              </div>
+            </div>
+            <p>This is 5th paragraph</p>
+            <p>This is 6th paragraph</p>
+            <div>
+              <p> - This is 7th paragraph</p>
+              <p> - This is 8th paragraph</p>
+            </div>
+            <p>This is 9th paragraph</p>
+            <p>This is 10th paragraph</p>
+          </div>
+        </article>
+
+        <aside>
+          <div>
+            <p> - This is 7th paragraph</p>
+            <p> - This is 8th paragraph</p>
+          </div>
+        </aside>
+      </main>
+
+      <footer>
+        footer
+      </footer>
     </div>
-
-    <p class="">This is paragraph</p>
-    <p class="">This is paragraph</p>
-
-    <div>
-      Div Element
-      <section>
-        <p class=""> - This is paragraph</p>
-        <p class=""> - This is paragraph</p>
-      </section>
-    </div>
-
-    <p class="">This is paragraph</p>
 
   </body>
 </html>
